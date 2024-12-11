@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Job</title>
+</head>
+<body>
+    <h1>Edit Job Posting</h1>
+    <form action="{{ url_for('job.edit_job', job_id=job.job_id) }}" method="POST">
+        <label for="company">Company Name:</label>
+        <input type="text" id="company" name="company" value="{{ job.company_name }}" required><br><br>
+        
+        <label for="title">Job Title:</label>
+        <input type="text" id="title" name="title" value="{{ job.title }}" required><br><br>
+        
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" rows="4" cols="50">{{ job.description }}</textarea><br><br>
+        
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" value="{{ job.location }}"><br><br>
+        
+        <label for="employment_type">Employment Type:</label>
+        <select id="employment_type" name="employment_type">
+            <option value="Full-time" {% if job.employment_type == 'Full-time' %}selected{% endif %}>Full-time</option>
+            <option value="Part-time" {% if job.employment_type == 'Part-time' %}selected{% endif %}>Part-time</option>
+            <option value="Contract" {% if job.employment_type == 'Contract' %}selected{% endif %}>Contract</option>
+            <option value="Internship" {% if job.employment_type == 'Internship' %}selected{% endif %}>Internship</option>
+            <option value="Temporary" {% if job.employment_type == 'Temporary' %}selected{% endif %}>Temporary</option>
+        </select><br><br>
+        
+        <label for="salary_range">Salary Range:</label>
+        <input type="text" id="salary_range" name="salary_range" value="{{ job.salary_range }}"><br><br>
+        
+        <label for="application_deadline">Application Deadline:</label>
+        <input type="date" id="application_deadline" name="application_deadline" value="{{ job.application_deadline }}"><br><br>
+        
+        <button type="submit">Save Changes</button>
+    </form>
+</body>
+</html>

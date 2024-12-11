@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Company</title>
+</head>
+<body>
+    <h1>Edit Company Details</h1>
+    <form action="{{ url_for('company.edit_company', company_id=company.company_id) }}" method="POST">
+        <label for="company_name">Company Name:</label>
+        <input type="text" id="company_name" name="company_name" value="{{ company.company_name }}" required><br><br>
+        
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" rows="4" cols="50">{{ company.description }}</textarea><br><br>
+        
+        <label for="website">Website:</label>
+        <input type="url" id="website" name="website" value="{{ company.website }}"><br><br>
+        
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" value="{{ company.location }}"><br><br>
+        
+        <label for="industry">Industry:</label>
+        <input type="text" id="industry" name="industry" value="{{ company.industry }}"><br><br>
+        
+        <button type="submit">Save Changes</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Listings</title>
+</head>
+<body>
+  <h2>Job Listings</h2>
+
+  {% for job in jobs %}
+    <div>
+      <h3><a href="/jobs/{{ job.job_id }}">{{ job.title }}</a></h3>
+      <p><strong>Location:</strong> {{ job.location }}</p>
+      <p><strong>Type:</strong> {{ job.employment_type }}</p>
+      <p>{{ job.description | truncate(100) }}</p> <!-- Show only 100 characters of the description -->
+      <hr>
+    </div>
+  {% endfor %}
+
+  <a href="/jobs/create">Post a New Job</a>
+</body>
+</html>

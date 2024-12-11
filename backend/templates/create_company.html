@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Company Profile</title>
+</head>
+<body>
+  <h2>Create Company Profile</h2>
+  <form action="/companies/create" method="POST">
+    
+    <label for="company_name">Company Name:</label>
+    <input type="text" id="company_name" name="company_name" required><br><br>
+
+    <label for="description">Description:</label><br>
+    <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+
+    <label for="website">Website:</label>
+    <input type="url" id="website" name="website" placeholder="https://example.com"><br><br>
+
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location" placeholder="City, Country"><br><br>
+
+    <label for="industry">Industry:</label>
+    <input type="text" id="industry" name="industry"><br><br>
+
+    <button type="submit">Create Company</button>
+  </form>
+</body>
+</html>

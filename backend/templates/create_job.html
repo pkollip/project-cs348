@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Job Posting</title>
+</head>
+<body>
+  <h2>Create Job Posting</h2>
+  <form action="/jobs/create" method="POST">
+    <label for="title">Job Title:</label>
+    <input type="text" id="title" name="title" required><br><br>
+
+    <label for="company">Company Name:</label>
+    <input type="text" id="company" name="company" required><br><br>
+
+    <label for="description">Description:</label><br>
+    <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location"><br><br>
+
+    <label for="employment_type">Employment Type:</label>
+    <select id="employment_type" name="employment_type">
+      <option value="Full-time">Full-time</option>
+      <option value="Part-time">Part-time</option>
+      <option value="Contract">Contract</option>
+      <option value="Internship">Internship</option>
+      <option value="Temporary">Temporary</option>
+    </select><br><br>
+
+    <label for="salary_range">Salary Range:</label>
+    <input type="text" id="salary_range" name="salary_range"><br><br>
+
+    <label for="application_deadline">Application Deadline:</label>
+    <input type="date" id="application_deadline" name="application_deadline"><br><br>
+
+    <button type="submit">Create Job</button>
+  </form>
+</body>
+</html>
